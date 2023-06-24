@@ -15,9 +15,8 @@ Pour lancer le serveur Express, assurez-vous d'être dans le root du projet. Sui
 3. La commande `npm start` s'occupera également de lancer le serveur Express sur le port 3000.
 
 Assurez-vous que toutes les dépendances nécessaires sont installées avec succès avant d'exécuter `npm start`.
-
-
-
+<br/>
+<br/>
 ## Documentation de l'API
 
 ### Récupérer les membres d'une ligue
@@ -60,9 +59,8 @@ Assurez-vous que toutes les dépendances nécessaires sont installées avec succ
 | --------------- | ------------------------------------------------ |
 | 404             | Non trouvé. L'identifiant utilisé n'existe pas.  |
 | 500             | Erreur interne du serveur.                        |
-
-
-
+<br/>
+<br/>
 ### Créer une ligue
 
 - **Endpoint** : `POST /api/createLeague`
@@ -91,9 +89,8 @@ Assurez-vous que toutes les dépendances nécessaires sont installées avec succ
 | --------------- | ------------------------------------------------- |
 | 400             | Requête incorrecte. Votre requête n'est pas valide. |
 | 500             | Erreur interne du serveur.                         |
-
-
-
+<br/>
+<br/>
 ### Modifier le nom d'une équipe
 
 - **Endpoint** : `PATCH /api/updateTeamName`
