@@ -62,6 +62,7 @@ Assurez-vous que toutes les dépendances nécessaires sont installées avec succ
 | 500             | Erreur interne du serveur.                        |
 
 
+
 ### Créer une ligue
 
 - **Endpoint** : `POST /api/createLeague`
@@ -90,6 +91,8 @@ Assurez-vous que toutes les dépendances nécessaires sont installées avec succ
 | --------------- | ------------------------------------------------- |
 | 400             | Requête incorrecte. Votre requête n'est pas valide. |
 | 500             | Erreur interne du serveur.                         |
+
+
 
 ### Modifier le nom d'une équipe
 
