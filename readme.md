@@ -1,4 +1,4 @@
-# Test Tehnique Backend pour MPG
+# Test Technique Backend pour MPG
 
 Cette repo contient le code requis pour le test technique backend de MPG.
 
@@ -17,6 +17,7 @@ Pour lancer le serveur Express, assurez-vous d'être dans le root du projet. Sui
 Assurez-vous que toutes les dépendances nécessaires sont installées avec succès avant d'exécuter `npm start`.
 <br/>
 <br/>
+
 ## Documentation de l'API
 
 ### Récupérer les membres d'une ligue
@@ -61,6 +62,7 @@ Assurez-vous que toutes les dépendances nécessaires sont installées avec succ
 | 500             | Erreur interne du serveur.                        |
 <br/>
 <br/>
+
 ### Créer une ligue
 
 - **Endpoint** : `POST /api/createLeague`
@@ -91,6 +93,7 @@ Assurez-vous que toutes les dépendances nécessaires sont installées avec succ
 | 500             | Erreur interne du serveur.                         |
 <br/>
 <br/>
+
 ### Modifier le nom d'une équipe
 
 - **Endpoint** : `PATCH /api/updateTeamName`
