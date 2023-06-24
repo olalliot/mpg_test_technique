@@ -6,8 +6,8 @@ async function getUsersFromLeague(leagueID: string): Promise<{ name: string }[]>
     // First, retrieve list of userIDs given the leagueID
     const league = await couchbase_dal.getLeagueFromId(leagueID);
     if (!league || league.type !== "mpg_league") {
-        // Handle no league found error & incorrect object type
-        throw new Error("No league with this ID was found");
+        // Handle no league found error
+        throw new Error("document not found");
     }
     const leagueUsers = league?.usersTeams;
     
@@ -16,7 +16,7 @@ async function getUsersFromLeague(leagueID: string): Promise<{ name: string }[]>
     for (let user in leagueUsers) {
         const userInfo = await couchbase_dal.getUserFromId(user);
         if (!userInfo) {
-            throw new Error("Error in retrieving user details");
+            throw new Error("500");
         }
         const username = userInfo.name;
         usernames.push({ "name": username});
@@ -29,7 +29,7 @@ async function getUsersFromLeague(leagueID: string): Promise<{ name: string }[]>
 async function createNewLeague(newLeague: any) {
     // Create a new league and store in the couchbase server
     if (!newLeague.adminId || !newLeague.id || !newLeague.description || !newLeague.name) {
-        throw new Error("Missing league information for creation")
+        throw new Error("400")
     }
 
     const newLeagueFromDetails: League = {
@@ -47,18 +47,18 @@ async function createNewLeague(newLeague: any) {
 async function updateTeamName(teamId: string, newName: string) {
     // Update team name to 'newName', given teamId
     if (!teamId) {
-        throw new Error("No teamId was provided");
+        throw new Error("400");
     }
 
     // Do we want to allow empty team name? I'm going to assume no, but it would be possible without the below
     if (!newName) {
-        throw new Error("Cannot have empty team name");
+        throw new Error("400");
     }
 
     // First, we retrieve the team's details
     const team = await couchbase_dal.retrieveTeamDetails(teamId);
     if (!team || team.type !== "mpg_team") {
-        throw new Error("Cannot find the team with the provided teamId");
+        throw new Error("document not found");
     };
 
     // Next, update the team name field to the new value

@@ -8,7 +8,7 @@ Avant de lancer le serveur Express, assurez-vous d'avoir une instance active de 
 
 ## Installation et exécution du serveur
 
-Pour lancer le serveur Express, assurez-vous d'être dans le répertoire racine du projet. Suivez les étapes ci-dessous :
+Pour lancer le serveur Express, assurez-vous d'être dans le root du projet. Suivez les étapes ci-dessous :
 
 1. Exécutez la commande `npm install` pour installer les modules Node requis pour le projet.
 2. Ensuite, exécutez la commande `npm start` pour créer le fichier `dist` qui sera utilisé par le serveur Express.
@@ -56,6 +56,12 @@ Assurez-vous que toutes les dépendances nécessaires sont installées avec succ
   }
   ```
 
+| Code de réponse erreur | Description                                      |
+| --------------- | ------------------------------------------------ |
+| 404             | Non trouvé. L'identifiant utilisé n'existe pas.  |
+| 500             | Erreur interne du serveur.                        |
+
+
 ### Créer une ligue
 
 - **Endpoint** : `POST /api/createLeague`
@@ -80,6 +86,11 @@ Assurez-vous que toutes les dépendances nécessaires sont installées avec succ
   ```
 - **Exemple de réponse** : Aucun contenu dans la réponse.
 
+| Code de réponse erreur | Description                                       |
+| --------------- | ------------------------------------------------- |
+| 400             | Requête incorrecte. Votre requête n'est pas valide. |
+| 500             | Erreur interne du serveur.                         |
+
 ### Modifier le nom d'une équipe
 
 - **Endpoint** : `PATCH /api/updateTeamName`
@@ -100,14 +111,8 @@ Assurez-vous que toutes les dépendances nécessaires sont installées avec succ
   ```
 - **Exemple de réponse** : Aucun contenu dans la réponse.
 
-## Réponses d'erreur
-
-En cas d'erreur, l'API répondra avec le code de statut approprié et un message d'erreur dans le corps de la réponse.
-
-- **Code de statut** : 500 (Erreur interne du serveur)
-- **Corps de la réponse** :
-  ```json
-  {
-    "error": "Message d'erreur"
-  }
-  ```
+| Code de réponse erreur | Description                                       |
+| --------------- | ------------------------------------------------- |
+| 400             | Requête incorrecte. Votre requête n'est pas valide. |
+| 404             | Non trouvé. L'équipe indiquée n'existe pas.        |
+| 500             | Erreur interne du serveur.                         |

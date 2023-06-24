@@ -18,8 +18,6 @@ const bucket: Bucket = cluster.bucket(bucketName);
 const defaultCollection = bucket.defaultCollection();
 
 
-
-
 async function getLeagueFromId(leagueID: string): Promise<League | null>{
     // Retrieves all league fields from Id
     const result = await defaultCollection.get(leagueID);
